@@ -243,7 +243,8 @@ a:hover {
 }
 
 .form-input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-secondary);
+  opacity: 0.7;
 }
 
 .form-error {

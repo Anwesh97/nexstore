@@ -70,20 +70,23 @@
 
 .search-btn {
   position: absolute;
-  right: 4px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
-  font-size: 1rem;
-  opacity: 0.6;
-  transition: opacity 0.2s;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.2s;
 }
 
 .search-btn:hover {
-  opacity: 1;
+  color: var(--accent-primary);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .theme-btn {

@@ -5,7 +5,7 @@
       <span *ngIf="selectedCategory && !searchQuery">{{ selectedCategory }}</span>
       <span *ngIf="!searchQuery && !selectedCategory">All Products</span>
     </h1>
-    <span class="result-count">{{ filteredProducts.length }} products</span>
+    <span class="result-count badge badge-primary">{{ filteredProducts.length }} products</span>
   </div>
 
   <div class="page-layout">

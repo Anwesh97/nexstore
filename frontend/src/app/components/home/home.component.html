@@ -1,0 +1,126 @@
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content container">
+      <div class="hero-text">
+        <span class="hero-badge">🚀 New Collection 2026</span>
+        <h1 class="hero-title">
+          The Future of
+          <span class="gradient-text">Tech Shopping</span>
+        </h1>
+        <p class="hero-description">
+          Discover cutting-edge gadgets and premium electronics. Curated for tech enthusiasts who demand excellence.
+        </p>
+        <div class="hero-actions">
+          <a routerLink="/products" class="btn btn-primary btn-lg">Explore Products</a>
+          <a routerLink="/products" [queryParams]="{category: 'Laptops'}" class="btn btn-secondary btn-lg">Shop Laptops</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">500+</span>
+            <span class="stat-label">Products</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">50k+</span>
+            <span class="stat-label">Customers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">4.9</span>
+            <span class="stat-label">Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card floating">
+          <div class="glow-orb orb-1"></div>
+          <div class="glow-orb orb-2"></div>
+          <div class="hero-device">⚡</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories-section container">
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="categories-grid">
+      <div class="category-card" *ngFor="let cat of categories" (click)="browseCategory(cat)">
+        <span class="category-icon">{{ getCategoryIcon(cat) }}</span>
+        <span class="category-name">{{ cat }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-section container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Products</h2>
+      <a routerLink="/products" class="view-all-link">View All →</a>
+    </div>
+
+    <div class="products-grid" *ngIf="!loading">
+      <div class="product-card animate-fadeIn" *ngFor="let product of featuredProducts; let i=index" [style.animation-delay]="i * 0.1 + 's'">
+        <div class="product-image-wrapper">
+          <img [src]="product.imageUrl" [alt]="product.name" class="product-image" loading="lazy" (error)="product.imageUrl = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500'">
+          <div class="product-overlay">
+            <button class="btn btn-primary btn-sm" (click)="addToCart(product); $event.stopPropagation()">Add to Cart</button>
+          </div>
+          <span class="product-badge" *ngIf="product.featured">⭐ Featured</span>
+        </div>
+        <a [routerLink]="['/products', product.id]" class="product-info">
+          <span class="product-category-tag">{{ product.category }}</span>
+          <h3 class="product-name">{{ product.name }}</h3>
+          <div class="product-meta">
+            <span class="product-rating">★ {{ product.rating }}</span>
+            <span class="product-price">${{ product.price | number:'1.2-2' }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Loading Skeletons -->
+    <div class="products-grid" *ngIf="loading">
+      <div class="product-card" *ngFor="let s of [1,2,3,4]">
+        <div class="skeleton" style="height: 200px;"></div>
+        <div style="padding: 16px;">
+          <div class="skeleton" style="height: 14px; width: 60px; margin-bottom: 8px;"></div>
+          <div class="skeleton" style="height: 18px; width: 80%; margin-bottom: 12px;"></div>
+          <div class="skeleton" style="height: 14px; width: 50%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card glass-card">
+        <h2 class="cta-title">Ready to upgrade your tech?</h2>
+        <p class="cta-text">Join thousands of customers who trust NexStore for premium electronics.</p>
+        <a routerLink="/register" class="btn btn-primary btn-lg">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="brand-icon">⚡</span>
+          <span class="footer-brand-text">NexStore</span>
+          <p class="footer-description">Premium tech for the modern world.</p>
+        </div>
+        <div class="footer-links">
+          <a routerLink="/products">Products</a>
+          <a routerLink="/cart">Cart</a>
+          <a routerLink="/orders">Orders</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NexStore. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>

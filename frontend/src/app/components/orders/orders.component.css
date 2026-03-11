@@ -1,0 +1,127 @@
+.orders-page { padding: 40px 24px 80px; }
+
+.page-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: var(--text-primary);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 24px;
+}
+.empty-icon { font-size: 4rem; display: block; margin-bottom: 16px; }
+.empty-state h2 { color: var(--text-primary); margin-bottom: 8px; }
+.empty-state p { color: var(--text-secondary); margin-bottom: 24px; }
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-card { padding: 24px; }
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.order-id {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.order-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(18, 18, 26, 0.5);
+  border-radius: 10px;
+}
+
+.order-item-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.order-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-item-name {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.order-item-qty {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.order-item-total {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.order-address {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.order-total {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.order-total strong {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #6c63ff, #ff6584);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .order-footer { flex-direction: column; gap: 8px; align-items: flex-start; }
+}

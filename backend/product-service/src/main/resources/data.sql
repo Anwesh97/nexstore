@@ -1,0 +1,17 @@
+INSERT INTO products (name, description, price, image_url, category, stock_quantity, rating, featured) VALUES
+('MacBook Pro 16"', 'Apple M3 Pro chip, 18GB RAM, 512GB SSD, Space Black. Stunning Liquid Retina XDR display.', 2499.00, 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500', 'Laptops', 25, 4.8, true),
+('iPhone 15 Pro Max', '256GB, Natural Titanium. A17 Pro chip with 6-core GPU. Pro camera system.', 1199.00, 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500', 'Smartphones', 50, 4.9, true),
+('Sony WH-1000XM5', 'Industry-leading noise canceling headphones with Auto NC Optimizer and crystal clear hands-free calling.', 349.99, 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500', 'Audio', 100, 4.7, true),
+('Samsung Galaxy S24 Ultra', '512GB, Titanium Black. Galaxy AI, 200MP camera, S Pen built-in.', 1419.99, 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500', 'Smartphones', 35, 4.6, true),
+('iPad Air M2', '11-inch Liquid Retina, M2 chip, 256GB, Starlight. Works with Apple Pencil Pro.', 599.00, 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500', 'Tablets', 40, 4.5, false),
+('Dell XPS 15', 'Intel Core i7-13700H, 16GB RAM, 512GB SSD, 15.6" OLED 3.5K InfinityEdge display.', 1799.99, 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=500', 'Laptops', 20, 4.4, false),
+('AirPods Pro 2', 'Active Noise Cancellation, Adaptive Audio, USB-C MagSafe Charging Case.', 249.00, 'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500', 'Audio', 150, 4.8, true),
+('Samsung 65" OLED 4K TV', 'QD-OLED, Neural Quantum Processor, Dolby Atmos, Gaming Hub, 144Hz.', 2199.99, 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500', 'TVs', 15, 4.3, false),
+('PlayStation 5 Slim', '1TB SSD, DualSense Controller, 4K Blu-ray, haptic feedback and adaptive triggers.', 499.99, 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=500', 'Gaming', 30, 4.7, true),
+('Apple Watch Ultra 2', 'GPS + Cellular, 49mm Titanium Case, rugged design, 36hr battery life.', 799.00, 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500', 'Wearables', 45, 4.6, false),
+('Bose QuietComfort Ultra Earbuds', 'Immersive Audio, world-class noise cancellation, CustomTune technology.', 299.00, 'https://images.unsplash.com/photo-1590658268037-6bf12f032f55?w=500', 'Audio', 80, 4.5, false),
+('LG Gram 17"', 'Intel Core Ultra 7, 32GB RAM, 1TB SSD, 17" WQXGA anti-glare IPS. Only 1.35kg.', 1699.99, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500', 'Laptops', 18, 4.3, false),
+('Nintendo Switch OLED', '7-inch OLED Screen, wide adjustable stand, 64GB internal storage, enhanced audio.', 349.99, 'https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=500', 'Gaming', 60, 4.8, false),
+('Canon EOS R6 Mark II', '24.2MP Full-Frame CMOS, 4K 60p Video, up to 40fps electronic shutter.', 2499.00, 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500', 'Cameras', 12, 4.7, false),
+('Dyson V15 Detect', 'Laser illumination, piezo sensor, LCD screen, up to 60 minutes run time.', 749.99, 'https://images.unsplash.com/photo-1558317374-067fb5f30001?w=500', 'Home', 22, 4.4, false),
+('Samsung Galaxy Tab S9 Ultra', '14.6" Dynamic AMOLED 2X, Snapdragon 8 Gen 2, 512GB, S Pen included.', 1199.99, 'https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=500', 'Tablets', 28, 4.5, false);

@@ -1,0 +1,55 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <a routerLink="/" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">NexStore</span>
+    </a>
+
+    <div class="nav-search">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="search()"
+        placeholder="Search products..."
+        class="search-input"
+      />
+      <button (click)="search()" class="search-btn">🔍</button>
+    </div>
+
+    <div class="nav-actions" [class.mobile-open]="mobileMenuOpen">
+      <button class="theme-btn" (click)="toggleTheme()" [title]="isDarkTheme ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+        {{ isDarkTheme ? '☀️' : '🌙' }}
+      </button>
+
+      <a routerLink="/products" routerLinkActive="active" class="nav-link">Products</a>
+
+      <a routerLink="/cart" class="nav-link cart-link">
+        🛒
+        <span *ngIf="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
+      </a>
+
+      <ng-container *ngIf="user; else authLinks">
+        <div class="user-menu">
+          <button class="user-btn">
+            <span class="user-avatar">{{ user.name.charAt(0).toUpperCase() }}</span>
+            <span class="user-name">{{ user.name }}</span>
+          </button>
+          <div class="user-dropdown">
+            <a routerLink="/orders" class="dropdown-item">📦 My Orders</a>
+            <a *ngIf="user.role === 'ADMIN'" routerLink="/admin/products" class="dropdown-item">⚙️ Admin Panel</a>
+            <button (click)="logout()" class="dropdown-item logout-item">🚪 Logout</button>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #authLinks>
+        <a routerLink="/login" class="btn btn-outline btn-sm">Sign In</a>
+        <a routerLink="/register" class="btn btn-primary btn-sm">Sign Up</a>
+      </ng-template>
+    </div>
+
+    <button class="mobile-toggle" (click)="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>

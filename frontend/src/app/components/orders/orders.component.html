@@ -1,0 +1,46 @@
+<div class="orders-page container">
+  <h1 class="page-title">My Orders</h1>
+
+  <div class="empty-state" *ngIf="!loading && orders.length === 0">
+    <span class="empty-icon">📦</span>
+    <h2>No orders yet</h2>
+    <p>When you place your first order, it will appear here.</p>
+    <a routerLink="/products" class="btn btn-primary btn-lg">Start Shopping</a>
+  </div>
+
+  <div class="orders-list" *ngIf="!loading">
+    <div class="order-card glass-card animate-fadeIn" *ngFor="let order of orders; let i = index" [style.animation-delay]="i * 0.1 + 's'">
+      <div class="order-header">
+        <div class="order-info">
+          <span class="order-id">Order #{{ order.id }}</span>
+          <span class="order-date">{{ order.createdAt | date:'MMM d, y, h:mm a' }}</span>
+        </div>
+        <span class="badge" [ngClass]="getStatusClass(order.status)">{{ order.status }}</span>
+      </div>
+
+      <div class="order-items">
+        <div class="order-item" *ngFor="let item of order.items">
+          <img [src]="item.imageUrl" [alt]="item.productName" class="order-item-img" (error)="item.imageUrl = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500'">
+          <div class="order-item-details">
+            <span class="order-item-name">{{ item.productName }}</span>
+            <span class="order-item-qty">Qty: {{ item.quantity }} × ${{ item.price | number:'1.2-2' }}</span>
+          </div>
+          <span class="order-item-total">${{ item.price * item.quantity | number:'1.2-2' }}</span>
+        </div>
+      </div>
+
+      <div class="order-footer">
+        <span class="order-address">📍 {{ order.shippingAddress }}</span>
+        <span class="order-total">Total: <strong>${{ order.totalAmount | number:'1.2-2' }}</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="orders-list" *ngIf="loading">
+    <div class="order-card glass-card" *ngFor="let s of [1,2]">
+      <div class="skeleton" style="height: 20px; width: 40%; margin-bottom: 16px;"></div>
+      <div class="skeleton" style="height: 60px; margin-bottom: 12px;"></div>
+      <div class="skeleton" style="height: 16px; width: 50%;"></div>
+    </div>
+  </div>
+</div>
